@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "curiousgnuaks-3403"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "curiousgnuaks-3403"
+  template:
+    metadata:
+      labels:
+        app: "curiousgnuaks-3403"
+    spec:
+      containers:
+        - name: "curiousgnuaks-3403"
+          image: "pr24acr.azurecr.io/curiousgnuaks"
+          ports:
+          - containerPort: 80
